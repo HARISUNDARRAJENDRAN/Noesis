@@ -2,7 +2,16 @@ import { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 
-const NAV_LINKS = [
+interface NavLink {
+  href: string;
+  label: string;
+}
+
+interface NavbarProps {
+  scrollProgress?: number;
+}
+
+const NAV_LINKS: NavLink[] = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
@@ -10,13 +19,13 @@ const NAV_LINKS = [
   { href: "#contact", label: "Contact" },
 ];
 
-export default function Navbar({ scrollProgress = 0 }) {
-  const [menuOpen, setMenuOpen] = useState(false);
+export default function Navbar({ scrollProgress = 0 }: NavbarProps): JSX.Element {
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
     if (!menuOpen) return undefined;
 
-    const handleResize = () => {
+    const handleResize = (): void => {
       if (window.innerWidth >= 960) {
         setMenuOpen(false);
       }
@@ -26,9 +35,9 @@ export default function Navbar({ scrollProgress = 0 }) {
     return () => window.removeEventListener("resize", handleResize);
   }, [menuOpen]);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = (): void => setMenuOpen(false);
 
-  const shellClassName = useMemo(() => {
+  const shellClassName = useMemo<string>(() => {
     const classes = [styles.shell];
     if (scrollProgress > 0.05) {
       classes.push(styles.shellScrolled);
@@ -39,7 +48,7 @@ export default function Navbar({ scrollProgress = 0 }) {
     return classes.join(" ");
   }, [menuOpen, scrollProgress]);
 
-  const mobileNavClassName = useMemo(() => {
+  const mobileNavClassName = useMemo<string>(() => {
     const classes = [styles.mobileNav];
     if (menuOpen) {
       classes.push(styles.mobileNavOpen);

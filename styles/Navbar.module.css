@@ -1,6 +1,6 @@
 .navbar {
   position: fixed;
-  top: clamp(1rem, 2vw, 1.6rem);
+  top: calc(clamp(1rem, 2vw, 1.6rem) + 16px);
   left: 0;
   right: 0;
   z-index: 2000;
@@ -18,10 +18,10 @@
   gap: clamp(1.1rem, 2.5vw, 2.4rem);
   padding: 0.85rem clamp(1.5rem, 4vw, 2.6rem);
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(17, 28, 47, 0.9), rgba(33, 47, 68, 0.62));
-  box-shadow: 0 24px 52px rgba(10, 18, 32, 0.38), inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(28px);
-  color: rgba(240, 245, 255, 0.92);
+  color: #1f2937;
   transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.3s ease, color 0.3s ease;
 }
 
@@ -30,21 +30,21 @@
   position: absolute;
   inset: -6px;
   border-radius: inherit;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.36), transparent 65%);
-  opacity: 0.6;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.8), transparent 65%);
+  opacity: 0.3;
   filter: blur(22px);
   z-index: -1;
 }
 
 .shellScrolled {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.22), inset 0 0 0 1px rgba(148, 163, 184, 0.32);
-  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  color: #1f2937;
 }
 
 .shellScrolled::before {
-  opacity: 0.4;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.7), transparent 70%);
+  opacity: 0.2;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 70%);
 }
 
 .shellOpen {
@@ -52,7 +52,7 @@
 }
 
 .brand {
-  font-family: "Instrument Serif", serif;
+  font-family: "Instrument Serif";
   font-size: clamp(1.55rem, 2.6vw, 1.95rem);
   letter-spacing: 0.14rem;
   font-weight: 600;
@@ -121,9 +121,9 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.08);
-  color: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.05);
+  color: #1f2937;
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -131,13 +131,13 @@
 }
 
 .hamburger:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .shellScrolled .hamburger {
-  border-color: rgba(36, 53, 78, 0.25);
-  background: rgba(255, 255, 255, 0.85);
-  color: var(--color-text);
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.05);
+  color: #1f2937;
 }
 
 .hamburgerLine {
@@ -171,8 +171,8 @@
   width: min(92vw, 420px);
   padding: 1rem 1.6rem 1.4rem;
   border-radius: 24px;
-  background: rgba(15, 24, 40, 0.94);
-  box-shadow: 0 28px 60px rgba(9, 16, 28, 0.45);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(20px);
   flex-direction: column;
   gap: 0.9rem;
@@ -183,16 +183,16 @@
 }
 
 .mobileNavLight {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 24px 46px rgba(15, 23, 42, 0.24);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 24px 46px rgba(0, 0, 0, 0.12);
 }
 
 .mobileNavLink {
   font-size: 1.05rem;
   font-weight: 500;
-  color: rgba(239, 244, 255, 0.95);
+  color: #1f2937;
   padding: 0.35rem 0;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transition: color 0.25s ease;
 }
 
