@@ -3,132 +3,228 @@
   flex-direction: column;
   width: 100%;
   position: relative;
+  background: #f8fafc;
 }
 
 .stickyContainer {
-  position: relative;
-  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
 }
 
 .sectionSpacer {
-  height: 100vh;
-  pointer-events: none;
+  display: none;
 }
 
 .section {
-  padding: clamp(5rem, 12vw, 8rem) 2.5rem;
-  background: linear-gradient(180deg, rgba(248, 250, 252, 1) 0%, rgba(236, 244, 250, 1) 100%);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  border-radius: 32px 32px 0 0;
-  box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.15);
-  margin-top: -32px;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 7vw, 7rem);
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.section:first-of-type {
-  margin-top: 0;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
   border-radius: 0;
   box-shadow: none;
 }
 
-.sectionAlternate {
-  background: linear-gradient(180deg, rgba(236, 244, 250, 1) 0%, rgba(255, 255, 255, 1) 100%);
+.section:first-of-type {
+  margin-top: 0;
 }
 
-/* Stacking order for sticky sections */
-.section:nth-of-type(1) { 
-  z-index: 16; 
-  box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.15);
-}
-.section:nth-of-type(2) { 
-  z-index: 15; 
-  box-shadow: 0 -16px 52px rgba(0, 0, 0, 0.18);
-}
-.section:nth-of-type(3) { 
-  z-index: 14; 
-  box-shadow: 0 -20px 56px rgba(0, 0, 0, 0.20);
-}
-.section:nth-of-type(4) { 
-  z-index: 13; 
-  box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.22);
-}
-.section:nth-of-type(5) { 
-  z-index: 12; 
-  box-shadow: 0 -28px 64px rgba(0, 0, 0, 0.24);
-}
-.section:nth-of-type(6) { 
-  z-index: 11; 
-  box-shadow: 0 -32px 68px rgba(0, 0, 0, 0.26);
+.sectionAbout {
+  background: linear-gradient(135deg, #fff4e9 0%, #ffffff 55%, #ffe8d9 100%);
 }
 
-.sectionInner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: grid;
-  gap: 2rem;
-  width: 100%;
+.sectionServices {
+  background: linear-gradient(135deg, #e6fbf3 0%, #ffffff 55%, #dff5ec 100%);
+}
+
+.sectionBlog {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .sectionTitle {
   font-family: "Instrument Serif";
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: #111827;
   margin: 0;
-  color: #1f2933;
+  max-width: 20ch;
+}
+
+.sectionLead {
+  font-size: clamp(1.125rem, 2.4vw, 1.7rem);
+  line-height: 1.7;
+  color: #243046;
+  margin: 0;
+  max-width: 60ch;
 }
 
 .sectionText {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: var(--color-text-light);
-  line-height: 1.7;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.85;
+  color: #4a5566;
   margin: 0;
-  max-width: 48ch;
+  max-width: 68ch;
 }
 
-.featureGrid {
+.sectionHighlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  gap: clamp(1rem, 2.2vw, 1.75rem);
+  width: 100%;
 }
 
-.featureCard {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 18px;
-  padding: 1.75rem;
-  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.08);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-}
-
-.featureTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-  color: var(--color-text);
-}
-
-.featureText {
-  margin: 0;
-  color: var(--color-text-light);
+.sectionHighlights li {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 1.5rem;
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.1);
+  font-size: 1rem;
   line-height: 1.6;
+  color: #2f3846;
 }
 
-@media (max-width: 640px) {
+.sectionActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sectionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(1.8rem, 4vw, 2.8rem);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  min-height: 40px;
+}
+
+.sectionButtonPrimary {
+  background: #111827;
+  color: #f9fafb;
+  box-shadow: 0 20px 42px rgba(17, 24, 39, 0.25);
+}
+.sectionContact .sectionText {
+  color: #f8fafc;
+}
+
+.sectionContact .sectionHighlights li {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(148, 163, 184, 0.35);
+  color: #e2e8f0;
+  box-shadow: 0 24px 48px rgba(2, 6, 23, 0.55);
+}
+
+.sectionContact .sectionButtonPrimary {
+  background: #f8fafc;
+  color: #0f172a;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.3);
+}
+
+.sectionContact .sectionButtonPrimary:hover,
+.sectionContact .sectionButtonPrimary:focus-visible {
+  box-shadow: 0 26px 54px rgba(15, 23, 42, 0.38);
+}
+
+.sectionContact .sectionButtonGhost {
+  background: rgba(15, 23, 42, 0.45);
+  color: #f8fafc;
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+.sectionContactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: clamp(1rem, 1.9vw, 1.25rem);
+}
+
+.sectionContactInfo a:hover,
+.sectionContactInfo a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
   .section {
-    padding: clamp(4rem, 14vw, 6rem) 1.5rem;
-    border-radius: 24px 24px 0 0;
-    margin-bottom: 100vh;
-    min-height: 100vh;
+    padding: clamp(3.5rem, 10vw, 6rem) clamp(1.25rem, 6vw, 3.5rem);
+  }
+
+  .sectionHighlights {
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    position: relative;
+    top: unset;
+    margin-top: 0;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
   }
 
   .section:first-of-type {
     border-radius: 0;
   }
 
-  .section:last-of-type {
-    margin-bottom: 0;
+  .sectionSpacer {
+    display: none;
+  }
+
+  .sectionInner {
+    align-items: flex-start;
+  }
+
+  .sectionEyebrow {
+    font-size: 0.8rem;
+  }
+
+  .sectionHighlights {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionActions {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .sectionButton {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 1.05rem;
+    padding: 0 clamp(1.4rem, 6vw, 2.4rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .section {
+    padding: clamp(3rem, 14vw, 5rem) clamp(1rem, 8vw, 2rem);
+  }
+
+  .sectionTitle {
+    font-size: clamp(2.4rem, 9vw, 3.4rem);
+  }
+
+  .sectionLead {
+    font-size: clamp(1.05rem, 5vw, 1.4rem);
   }
 }

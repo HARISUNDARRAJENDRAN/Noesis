@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { CSSProperties, ReactElement } from "react";
 import styles from "../styles/Hero.module.css";
 
 interface HeroProps {
@@ -6,8 +7,19 @@ interface HeroProps {
   viewportHeight?: number;
 }
 
-export default function Hero({ scrollY = 0, viewportHeight = 1 }: HeroProps): JSX.Element {
+export default function Hero({ scrollY = 0, viewportHeight = 1 }: HeroProps): ReactElement {
   const [isLoaded, setIsLoaded] = useState(false);
+
+  const safeViewportHeight = Math.max(viewportHeight ?? 1, 1);
+  const parallaxFactor = 0.25;
+  const maxOffset = safeViewportHeight * 0.4;
+  const scrollOffset = Math.min(scrollY * parallaxFactor, maxOffset);
+  const fadeProgress = Math.min(scrollY / (safeViewportHeight * 0.7), 1);
+  const baseOffset = isLoaded ? 0 : 30;
+  const contentStyle: CSSProperties = {
+    opacity: isLoaded ? Math.max(0, 1 - fadeProgress) : 0,
+    transform: `translateY(${baseOffset + scrollOffset}px)`,
+  };
 
   useEffect(() => {
     // Trigger animations after component mounts
@@ -36,10 +48,13 @@ export default function Hero({ scrollY = 0, viewportHeight = 1 }: HeroProps): JS
         <div className={styles.gradientOverlay} aria-hidden="true" />
       </div>
 
-      <div className={`${styles.content} ${isLoaded ? styles.contentVisible : ''}`}>
+      <div
+        className={`${styles.content} ${isLoaded ? styles.contentVisible : ''}`}
+        style={contentStyle}
+      >
         <h1 className={styles.title}>
-          <span>Watch, Learn</span>
-          <span>and Master</span>
+          <span>Go Beyond</span>
+          <span>Watching</span>
         </h1>
         <div className={styles.actions}>
           <a className={`${styles.button} ${styles.primary}`} href="#journey">

@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect } from "react";
+import type { ReactElement } from "react";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 
@@ -19,7 +20,7 @@ const NAV_LINKS: NavLink[] = [
   { href: "#contact", label: "Contact" },
 ];
 
-export default function Navbar({ scrollProgress = 0 }: NavbarProps): JSX.Element {
+export default function Navbar({ scrollProgress = 0 }: NavbarProps): ReactElement {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {

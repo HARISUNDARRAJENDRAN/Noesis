@@ -1,30 +1,12 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import type { ReactElement } from "react";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
+import { AboutSection } from "../components/AboutSection";
 import styles from "../styles/Home.module.css";
 
-interface FeatureCard {
-  title: string;
-  body: string;
-}
-
-const FEATURE_CARDS: FeatureCard[] = [
-  {
-    title: "Curated Learning Paths",
-    body: "Chart a personalised route through the best educational YouTube channels, playlists, and lectures without getting lost in the noise.",
-  },
-  {
-    title: "Adaptive Recommendations",
-    body: "Our engine learns with you, surfacing the next video that builds on what you just mastered for compounding growth.",
-  },
-  {
-    title: "Immersive Note-Taking",
-    body: "Capture insights with synchronised notes, transcripts, and highlights that stay connected to each moment of discovery.",
-  },
-];
-
-export default function HomePage(): JSX.Element {
+export default function HomePage(): ReactElement {
   const [scrollY, setScrollY] = useState<number>(0);
   const [viewportHeight, setViewportHeight] = useState<number>(1);
 
@@ -65,10 +47,10 @@ export default function HomePage(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Noesis | Watch, Learn and Master</title>
+        <title>Noesis | Go Beyond Watching</title>
         <meta
           name="description"
-          content="Noesis helps you watch, learn, and master faster with a cinematic parallax hero and curated journeys."
+          content="Noesis helps you go beyond watching by guiding immersive journeys with cinematic storytelling and curated learning paths."
         />
       </Head>
 
@@ -76,77 +58,100 @@ export default function HomePage(): JSX.Element {
 
       <main className={styles.main}>
         <Hero scrollY={scrollY} viewportHeight={viewportHeight} />
+        <AboutSection />
 
         <div className={styles.stickyContainer}>
-          <section id="journey" className={`${styles.section} ${styles.sectionAlternate}`}>
+          <section id="services" className={`${styles.section} ${styles.sectionServices}`}>
             <div className={styles.sectionInner}>
-              <h2 className={styles.sectionTitle}>Start Your Journey</h2>
-              <p className={styles.sectionText}>
-                Dive into curated collections of the most insightful educational videos. Noesis layers discovery,
-                structure, and reflection so every watch moves you closer to mastery.
+              <span className={styles.sectionEyebrow}>Services</span>
+              <h2 className={styles.sectionTitle}>Bring Your Expertise to Life</h2>
+              <p className={styles.sectionLead}>
+                Collaborate with our studio team to design transformational programs, cinematic explainers, and bespoke
+                mentorship tracks for your community.
               </p>
-              <div className={styles.featureGrid}>
-                {FEATURE_CARDS.map((feature) => (
-                  <div key={feature.title} className={styles.featureCard}>
-                    <div className={styles.featureTitle}>{feature.title}</div>
-                    <p className={styles.featureText}>{feature.body}</p>
-                  </div>
-                ))}
+              <ul className={styles.sectionHighlights}>
+                <li>Curriculum architecture that scaffolds complex ideas into clear chapters.</li>
+                <li>Story-driven video production that captures attention and keeps it growing.</li>
+                <li>Accountability layers that translate insight into measurable progress.</li>
+              </ul>
+              <div className={styles.sectionActions}>
+                <a href="#contact" className={`${styles.sectionButton} ${styles.sectionButtonPrimary}`}>
+                  Partner with Us
+                </a>
+                <a href="#blog" className={`${styles.sectionButton} ${styles.sectionButtonGhost}`}>
+                  See Our Process
+                </a>
               </div>
             </div>
           </section>
-          <div className={styles.sectionSpacer}></div>
 
-          <section id="about" className={styles.section}>
+          <section id="blog" className={`${styles.section} ${styles.sectionBlog}`}>
             <div className={styles.sectionInner}>
-              <h2 className={styles.sectionTitle}>About Noesis</h2>
-              <p className={styles.sectionText}>
-                We believe the best learning happens when ideas unfold at the right tempo. Inspired by alpine horizons,
-                Noesis combines cinematic storytelling with the depth of long-form video to keep curious minds in flow.
+              <span className={styles.sectionEyebrow}>Blog</span>
+              <h2 className={styles.sectionTitle}>Stay in Flow with Fresh Perspectives</h2>
+              <p className={styles.sectionLead}>
+                Reverse-engineer world-class explainers, learn how to design rituals for deep focus, and peek behind the
+                scenes of our storytelling lab.
               </p>
-            </div>
-          </section>
-          <div className={styles.sectionSpacer}></div>
-
-          <section id="services" className={`${styles.section} ${styles.sectionAlternate}`}>
-            <div className={styles.sectionInner}>
-              <h2 className={styles.sectionTitle}>Services</h2>
               <p className={styles.sectionText}>
-                From tailored mentorship tracks to studio-crafted explainer series, we help educators and creators bring
-                knowledge to life across every medium.
+                Every article distils experiments from our studio mentors and the creators we coach, giving you real-world
+                frameworks you can try today. Subscribe to stay on the ridge with us.
               </p>
-            </div>
-          </section>
-          <div className={styles.sectionSpacer}></div>
-
-          <section id="blog" className={styles.section}>
-            <div className={styles.sectionInner}>
-              <h2 className={styles.sectionTitle}>Latest From The Blog</h2>
-              <p className={styles.sectionText}>
-                Stories on mastering focus, building a consistent learning ritual, and reverse-engineering world-class
-                explainers. Fresh insights land here first.
-              </p>
+              <div className={styles.sectionActions}>
+                <a href="#learn-more" className={`${styles.sectionButton} ${styles.sectionButtonPrimary}`}>
+                  Read the Journal
+                </a>
+                <a href="#contact" className={`${styles.sectionButton} ${styles.sectionButtonGhost}`}>
+                  Get Updates
+                </a>
+              </div>
             </div>
           </section>
 
-          <section id="learn-more" className={`${styles.section} ${styles.sectionAlternate}`}>
+          <section id="learn-more" className={`${styles.section} ${styles.sectionLearn}`}>
             <div className={styles.sectionInner}>
+              <span className={styles.sectionEyebrow}>Guided Experiences</span>
               <h2 className={styles.sectionTitle}>Let&apos;s Build Your Peak</h2>
-              <p className={styles.sectionText}>
-                Ready to see how Noesis can accelerate your path to mastery? Reach out and we&apos;ll craft a climbing map for
-                the skills you&apos;re chasing.
+              <p className={styles.sectionLead}>
+                Ready to accelerate your ascent? We&apos;ll map a personalised route, complete with pacing guides, reflection
+                prompts, and accountability check-ins.
               </p>
+              <p className={styles.sectionText}>
+                Share the skills you&apos;re chasing and we&apos;ll recommend the perfect blend of curated content, live coaching,
+                and community touchpoints to keep you moving.
+              </p>
+              <div className={styles.sectionActions}>
+                <a href="#contact" className={`${styles.sectionButton} ${styles.sectionButtonPrimary}`}>
+                  Start Planning
+                </a>
+                <a href="#journey" className={`${styles.sectionButton} ${styles.sectionButtonGhost}`}>
+                  Browse Journeys
+                </a>
+              </div>
             </div>
           </section>
 
-          <section id="contact" className={styles.section}>
+          <section id="contact" className={`${styles.section} ${styles.sectionContact}`}>
             <div className={styles.sectionInner}>
-              <h2 className={styles.sectionTitle}>Contact</h2>
-              <p className={styles.sectionText}>
-                hello@noesis.studio
-                <br />
-                123 Summit Avenue, Aurora Basin
+              <span className={styles.sectionEyebrow}>Contact</span>
+              <h2 className={styles.sectionTitle}>Let&apos;s Design Your Next Summit</h2>
+              <p className={styles.sectionLead}>
+                Tell us about your audience, the transformation you&apos;re guiding, and the stories you want to bring to life.
+                We&apos;ll follow up with a tailored roadmap within two business days.
               </p>
+              <div className={styles.sectionContactInfo}>
+                <a href="mailto:hello@noesis.studio">hello@noesis.studio</a>
+                <span>123 Summit Avenue, Aurora Basin</span>
+                <span>+1 (555) 210-8860</span>
+              </div>
+              <div className={styles.sectionActions}>
+                <a href="mailto:hello@noesis.studio" className={`${styles.sectionButton} ${styles.sectionButtonPrimary}`}>
+                  Schedule a Call
+                </a>
+                <a href="#services" className={`${styles.sectionButton} ${styles.sectionButtonGhost}`}>
+                  Download Capabilities
+                </a>
+              </div>
             </div>
           </section>
         </div>

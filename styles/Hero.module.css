@@ -1,7 +1,6 @@
 .hero {
   position: relative;
-  height: 120vh;
-  min-height: 720px;
+  height: clamp(560px, 100vh, 900px);
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -19,10 +18,10 @@
 
 .layer {
   position: absolute;
-  inset: -12vh 0 0 0;
+  inset: -12vh -10vw -18vh -10vw;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   will-change: transform;
   filter: saturate(1.08) contrast(1.06);
 }
@@ -30,13 +29,14 @@
 .layerBackground {
   background-image: url("/images/parallax/hero_background.png");
   z-index: 1;
+  transform: translateY(35px);
   /* Static background - no animation */
 }
 
 .layerMidground {
   background-image: url("/images/parallax/hero_midground.png");
   z-index: 2;
-  transform: translateY(100vh);
+  transform: translateY(calc(100vh + 35px));
   transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -59,6 +59,10 @@
   transform: translateY(calc(-12vh - 74px)) !important;
 }
 
+.layerMidground.animateUp {
+  transform: translateY(calc(-12vh - 39px)) !important;
+}
+
 .layerForeground.animateUp {
   transform: translateY(calc(-6vh - 74px)) !important;
 }
@@ -76,16 +80,12 @@
   gap: clamp(1.8rem, 4vw, 2.5rem);
   padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem);
   height: 100%;
-  margin-top: calc(-8vh - 94px);
+  margin-top: calc(-8vh - 59px);
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
 }
 
-.contentVisible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .title {
   font-family: "Instrument Serif";
@@ -97,6 +97,7 @@
   margin: 0 0 clamp(0.5rem, 1.5vw, 1rem) 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: clamp(-6px, -0.8vw, 0px);
   text-align: center;
   align-self: center;
@@ -133,7 +134,7 @@
 }
 
 .button {
-  padding: clamp(0.95rem, 2.2vw, 1.15rem) clamp(2.4rem, 4.5vw, 3rem);
+  padding: 0 clamp(1.6rem, 3.8vw, 2.6rem);
   border-radius: 999px;
   font-size: clamp(0.9rem, 1.6vw, 1rem);
   font-weight: 500;
@@ -145,6 +146,7 @@
   align-items: center;
   justify-content: center;
   min-width: clamp(170px, 22vw, 210px);
+  min-height: 40px;
   white-space: nowrap;
   text-align: center;
 }
@@ -177,14 +179,13 @@
 
 @media (max-width: 900px) {
   .hero {
-    height: 110vh;
-    min-height: 640px;
+    height: clamp(520px, 100vh, 760px);
     padding: 0 1.5rem;
   }
 
   .content {
     gap: clamp(1.5rem, 3.5vw, 2rem);
-    margin-top: calc(-6vh - 60px);
+    margin-top: calc(-6vh - 25px);
     max-width: 700px;
   }
 
@@ -195,12 +196,12 @@
 
 @media (max-width: 640px) {
   .hero {
-    height: 105vh;
-    min-height: 560px;
+    height: clamp(480px, 100vh, 640px);
+    padding-bottom: clamp(2rem, 8vw, 3.5rem);
   }
 
   .content {
-    margin-top: calc(-4vh - 40px);
+    margin-top: calc(-3vh + 10px);
     gap: clamp(1.2rem, 3.5vw, 1.8rem);
     max-width: 500px;
   }
@@ -216,16 +217,20 @@
     min-width: unset;
     width: 100%;
     max-width: 280px;
+    min-height: 44px;
+    font-size: clamp(0.95rem, 2.8vw, 1.05rem);
+    padding: 0 clamp(1.4rem, 4vw, 2.4rem);
   }
 }
 
 @media (max-width: 420px) {
   .hero {
     padding: 0 1rem;
+    padding-bottom: clamp(2rem, 10vw, 3.8rem);
   }
 
   .content {
-    margin-top: calc(-2vh - 30px);
+    margin-top: calc(-1vh - 20px);
     gap: clamp(1rem, 3vw, 1.5rem);
     max-width: 350px;
   }
@@ -236,6 +241,7 @@
 
   .button {
     max-width: 260px;
-    padding: 1rem 2rem;
+    min-height: 44px;
+    padding: 0 clamp(1.3rem, 6vw, 2rem);
   }
 }
