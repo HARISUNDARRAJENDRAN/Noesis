@@ -1,0 +1,69 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.section {
+  padding: clamp(5rem, 12vw, 8rem) 2.5rem;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 1) 0%, rgba(236, 244, 250, 1) 100%);
+}
+
+.sectionAlternate {
+  background: linear-gradient(180deg, rgba(236, 244, 250, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.sectionInner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+.sectionTitle {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
+  color: #1f2933;
+}
+
+.sectionText {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 48ch;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.featureTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--color-text);
+}
+
+.featureText {
+  margin: 0;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: clamp(4rem, 14vw, 6rem) 1.5rem;
+  }
+}
