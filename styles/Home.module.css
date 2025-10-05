@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   position: relative;
-  background: #f8fafc;
+  background-color: #F2F3F4;
 }
 
 .stickyContainer {
@@ -29,18 +29,22 @@
   margin: 0;
   border-radius: 0;
   box-shadow: none;
+  background-color: #F2F3F4;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 140px 140px;
+  background-position: center;
 }
 
 .section:first-of-type {
   margin-top: 0;
 }
 
-.sectionAbout {
-  background: linear-gradient(135deg, #fff4e9 0%, #ffffff 55%, #ffe8d9 100%);
-}
-
-.sectionServices {
-  background: linear-gradient(135deg, #e6fbf3 0%, #ffffff 55%, #dff5ec 100%);
+.sectionAbout,
+.sectionLearn,
+.sectionBlog,
+.sectionContact {
+  background-color: transparent;
 }
 
 .sectionBlog {
@@ -119,34 +123,20 @@
   color: #f9fafb;
   box-shadow: 0 20px 42px rgba(17, 24, 39, 0.25);
 }
-.sectionContact .sectionText {
-  color: #f8fafc;
-}
 
-.sectionContact .sectionHighlights li {
-  background: rgba(15, 23, 42, 0.6);
-  border-color: rgba(148, 163, 184, 0.35);
-  color: #e2e8f0;
-  box-shadow: 0 24px 48px rgba(2, 6, 23, 0.55);
-}
-
-.sectionContact .sectionButtonPrimary {
-  background: #f8fafc;
+.sectionButtonGhost {
+  background: rgba(15, 23, 42, 0.06);
   color: #0f172a;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.3);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.12);
 }
 
-.sectionContact .sectionButtonPrimary:hover,
-.sectionContact .sectionButtonPrimary:focus-visible {
-  box-shadow: 0 26px 54px rgba(15, 23, 42, 0.38);
+.sectionButtonGhost:hover,
+.sectionButtonGhost:focus-visible {
+  background: rgba(15, 23, 42, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.16);
 }
-
-.sectionContact .sectionButtonGhost {
-  background: rgba(15, 23, 42, 0.45);
-  color: #f8fafc;
-  border-color: rgba(148, 163, 184, 0.5);
-}
-
 .sectionContactInfo {
   display: flex;
   flex-direction: column;
@@ -178,6 +168,7 @@
     border-radius: 0;
     box-shadow: none;
     width: 100%;
+    background-size: 90px 90px;
   }
 
   .section:first-of-type {
@@ -218,6 +209,7 @@
 @media (max-width: 520px) {
   .section {
     padding: clamp(3rem, 14vw, 5rem) clamp(1rem, 8vw, 2rem);
+    background-size: 70px 70px;
   }
 
   .sectionTitle {

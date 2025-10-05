@@ -1,0 +1,733 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F3F4;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 140px 140px;
+  background-position: center;
+  color: #0f172a;
+}
+
+.heroSection {
+  padding: clamp(4rem, 12vw, 7rem) clamp(1.6rem, 8vw, 7rem);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.heroInner {
+  width: min(960px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 2.4rem);
+}
+
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+  color: #111827;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.heroHeadline {
+  font-family: "Instrument Serif";
+  font-size: clamp(3rem, 7.5vw, 5.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0;
+  color: #0f172a;
+}
+
+.heroBody {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  line-height: 1.8;
+  color: #243046;
+  max-width: 64ch;
+}
+
+.solutionSection {
+  padding: clamp(3rem, 9vw, 7rem) clamp(1.6rem, 7vw, 7rem);
+}
+
+.solutionInner {
+  margin: 0 auto;
+  width: min(1180px, 100%);
+  display: grid;
+  grid-template-columns: minmax(300px, 1.05fr) minmax(320px, 1fr);
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  align-items: start;
+}
+
+.mockColumn {
+  position: sticky;
+  top: clamp(4.5rem, 12vw, 7rem);
+  height: fit-content;
+}
+
+.videoMockup {
+  position: relative;
+  background: rgba(15, 23, 42, 0.06);
+  border-radius: 32px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 0 32px 64px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+  min-height: clamp(420px, 48vw, 540px);
+}
+
+.featureOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.videoFrame {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0b1120;
+  isolation: isolate;
+  height: clamp(320px, 40vw, 420px);
+}
+
+.videoEmpty {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.8);
+  border: 2px dashed rgba(148, 163, 184, 0.25);
+  border-radius: inherit;
+}
+
+.videoHeader {
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  display: flex;
+  gap: 0.45rem;
+  z-index: 3;
+}
+
+.videoHeader span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(248, 250, 252, 0.78);
+}
+
+.videoBody {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.videoImage {
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.04);
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  background: linear-gradient(180deg, rgba(10, 16, 30, 0) 10%, rgba(10, 16, 30, 0.55) 55%, rgba(10, 16, 30, 0.85) 100%);
+}
+
+.videoTimeline {
+  width: 100%;
+  height: 4px;
+  background: rgba(226, 232, 240, 0.18);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.videoProgress {
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, #38bdf8 0%, #f472b6 100%);
+  border-radius: inherit;
+}
+
+.videoControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(248, 250, 252, 0.88);
+  font-size: 0.9rem;
+}
+
+.controlLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.playPill {
+  width: 46px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.22);
+}
+
+.controlInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.controlInfo span {
+  display: block;
+  width: clamp(100px, 12vw, 160px);
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.2);
+}
+
+.controlTime {
+  display: block;
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.25);
+}
+
+.stepsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4.2rem, 8vw, 6.5rem);
+  position: relative;
+}
+
+.featureWrapper {
+  position: relative;
+  height: clamp(440px, 55vw, 540px);
+}
+
+.featureCard {
+  position: sticky;
+  top: clamp(3.5rem, 20vh, 7.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.2rem, 3vw, 1.8rem);
+  padding: clamp(1.8rem, 4vw, 2.6rem);
+  border-radius: 32px;
+  background: rgba(248, 250, 252, 0.94);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 28px 52px rgba(15, 23, 42, 0.16);
+  backdrop-filter: blur(14px);
+  transform-origin: top center;
+}
+
+.featureHeading {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1.1rem, 3vw, 1.6rem);
+  align-items: flex-start;
+}
+
+.featureBadge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f0c9b4 0%, #f0c9b4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #0f172a;
+  box-shadow: 0 18px 34px rgba(240, 201, 180, 0.45);
+}
+
+.featureTextGroup {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 1.1rem);
+}
+
+.featureTitle {
+  margin: 0;
+  font-family: "Instrument Serif";
+  font-size: clamp(2.1rem, 4.8vw, 3.1rem);
+  line-height: 1.08;
+  color: #0f172a;
+  letter-spacing: -0.012em;
+}
+
+.featureDescription {
+  margin: 0;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.75;
+  color: #374151;
+}
+
+.chatMock {
+  position: absolute;
+  inset: auto clamp(1.5rem, 3vw, 2.4rem) clamp(1.5rem, 3vw, 2.4rem) clamp(1.5rem, 3vw, 2.4rem);
+  background: rgba(248, 250, 252, 0.98);
+  color: #0f172a;
+  border-radius: 24px;
+  box-shadow: 0 28px 48px rgba(15, 23, 42, 0.18);
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chatHeader {
+  font-weight: 600;
+  font-size: 0.96rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.7);
+}
+
+.chatBubbleUser,
+.chatBubbleBot {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.chatBubbleUser p,
+.chatBubbleBot p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.chatBubbleUser {
+  color: #0f172a;
+}
+
+.chatBubbleBot {
+  background: rgba(148, 163, 184, 0.18);
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  color: #111827;
+}
+
+.chatAvatar,
+.chatAvatarBot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  flex-shrink: 0;
+}
+
+.chatAvatarBot {
+  background: linear-gradient(135deg, #10b981, #22d3ee);
+}
+
+.cursor {
+  width: 1px;
+  height: 18px;
+  background: rgba(15, 23, 42, 0.6);
+  align-self: center;
+  animation: cursorBlink 1s steps(1) infinite;
+}
+
+@keyframes cursorBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.aiMock {
+  position: absolute;
+  inset: clamp(1.4rem, 3vw, 2.2rem);
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.96), rgba(240, 201, 180, 0.38));
+  color: #0f172a;
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.2rem, 3vw, 1.8rem);
+  box-shadow: 0 26px 54px rgba(15, 23, 42, 0.18);
+}
+
+.aiMockHeader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1rem, 3vw, 1.6rem);
+  align-items: center;
+}
+
+.aiMockBadge {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f0c9b4, #f8e1d3);
+  box-shadow: 0 18px 28px rgba(240, 201, 180, 0.45);
+}
+
+.aiMockHeader h4 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+
+.aiMockHeader p {
+  margin: 0.3rem 0 0 0;
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.aiMockGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: clamp(0.9rem, 2vw, 1.4rem);
+}
+
+.aiMockGrid > div {
+  background: rgba(15, 23, 42, 0.05);
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.aiMockGrid strong {
+  font-size: 1rem;
+}
+
+.aiMockGrid span {
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.mindMapMock {
+  position: absolute;
+  inset: clamp(1rem, 3vw, 1.6rem);
+  background: rgba(15, 23, 42, 0.86);
+  border-radius: 26px;
+  padding: clamp(1.6rem, 4vw, 2.2rem);
+  color: rgba(248, 250, 252, 0.85);
+  box-shadow: 0 30px 48px rgba(2, 6, 23, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderFrame {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1rem, 3vw, 1.4rem);
+  align-items: center;
+  padding: clamp(1.2rem, 3vw, 1.6rem);
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 22px;
+  border: 1px dashed rgba(248, 250, 252, 0.22);
+  max-width: min(420px, 100%);
+}
+
+.placeholderBadge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(248, 250, 252, 0.18);
+}
+
+.placeholderCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.placeholderCopy strong {
+  font-size: 1.05rem;
+  color: rgba(248, 250, 252, 0.92);
+}
+
+.placeholderCopy p {
+  margin: 0;
+  color: rgba(226, 232, 240, 0.7);
+}
+
+.analyticsMock {
+  position: absolute;
+  inset: auto clamp(1.4rem, 3vw, 2.2rem) clamp(1.4rem, 3vw, 2.2rem) clamp(1.4rem, 3vw, 2.2rem);
+  background: rgba(248, 250, 252, 0.98);
+  border-radius: 24px;
+  box-shadow: 0 28px 48px rgba(15, 23, 42, 0.16);
+  padding: clamp(1.5rem, 3vw, 2.1rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 1.4rem);
+  color: #0f172a;
+}
+
+.analyticsHeader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.95rem;
+  align-items: center;
+}
+
+.analyticsBadge {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22d3ee, #6366f1);
+  box-shadow: 0 16px 32px rgba(99, 102, 241, 0.25);
+}
+
+.analyticsHeader h4 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.analyticsHeader p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.analyticsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: clamp(0.8rem, 2vw, 1.1rem);
+}
+
+.analyticsCard {
+  border-radius: 18px;
+  padding: 0.9rem 1rem;
+  background: rgba(148, 163, 184, 0.14);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.analyticsCard span {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+}
+
+.analyticsCard strong {
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+
+.collabMock {
+  position: absolute;
+  inset: clamp(1.4rem, 3vw, 2.2rem) clamp(1.4rem, 3vw, 2.2rem) auto clamp(1.4rem, 3vw, 2.2rem);
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.92);
+  box-shadow: 0 28px 52px rgba(2, 6, 23, 0.32);
+  color: rgba(248, 250, 252, 0.92);
+  padding: clamp(1.4rem, 3vw, 2.1rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 1.4rem);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.collabHeader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.collabHeader h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+  color: rgba(248, 250, 252, 0.96);
+}
+
+.collabHeader p {
+  margin: 0.35rem 0 0;
+  font-size: 0.92rem;
+  color: rgba(226, 232, 240, 0.7);
+  line-height: 1.55;
+}
+
+.collabBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #facc15, #f97316);
+  box-shadow: 0 16px 30px rgba(249, 115, 22, 0.35);
+}
+
+.collabChecklist {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 1.1rem);
+}
+
+.collabItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.95rem 1.05rem;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.collabItem span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(148, 163, 184, 0.7);
+}
+
+.collabItem strong {
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+}
+
+.collabFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.88rem;
+  color: rgba(226, 232, 240, 0.72);
+}
+
+.collabAvatars {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.collabAvatars span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #22d3ee, #6366f1);
+  box-shadow: 0 12px 20px rgba(99, 102, 241, 0.25);
+}
+
+.collabAvatars span:nth-child(2) {
+  background: linear-gradient(135deg, #f97316, #f43f5e);
+}
+
+.collabAvatars span:nth-child(3) {
+  background: linear-gradient(135deg, #34d399, #10b981);
+}
+
+@media (max-width: 1024px) {
+  .solutionInner {
+    grid-template-columns: 1fr;
+  }
+
+  .mockColumn {
+    position: relative;
+    top: unset;
+  }
+
+  .videoMockup {
+    min-height: clamp(360px, 70vw, 460px);
+  }
+}
+
+@media (max-width: 720px) {
+  .experience {
+    background-size: 90px 90px;
+  }
+
+  .heroSection {
+    padding: clamp(3rem, 10vw, 5rem) clamp(1.2rem, 7vw, 2rem);
+  }
+
+  .heroEyebrow {
+    font-size: 0.82rem;
+  }
+
+  .solutionSection {
+    padding: clamp(2.5rem, 12vw, 4.5rem) clamp(1.2rem, 7vw, 2.2rem);
+  }
+
+  .stepsColumn {
+    gap: clamp(2rem, 10vw, 3rem);
+  }
+
+  .featureWrapper {
+    height: auto;
+  }
+
+  .featureCard {
+    position: relative;
+    top: unset;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);
+    transform: none !important;
+  }
+
+  .featureBadge {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  .featureTitle {
+    font-size: clamp(2rem, 7vw, 2.6rem);
+  }
+
+  .chatMock,
+  .mindMapMock,
+  .aiMock,
+  .analyticsMock,
+  .collabMock {
+    position: relative;
+    inset: unset;
+    margin-top: 1.5rem;
+  }
+
+  .videoMockup {
+    padding: clamp(1.2rem, 4vw, 1.8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    background-size: 70px 70px;
+  }
+
+  .heroHeadline {
+    font-size: clamp(2.6rem, 11vw, 3.3rem);
+  }
+
+  .heroBody {
+    font-size: 1.05rem;
+  }
+
+  .videoFrame {
+    height: clamp(240px, 58vw, 300px);
+  }
+
+  .ctaInner {
+    padding: clamp(2rem, 12vw, 3rem);
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+}

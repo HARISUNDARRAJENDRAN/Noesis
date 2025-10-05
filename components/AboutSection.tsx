@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import styles from "../styles/AboutSection.module.css";
+import Link from "next/link";
 
 export function AboutSection(): JSX.Element {
   return (
@@ -19,6 +20,9 @@ export function AboutSection(): JSX.Element {
             <li>Master what matters.</li>
           </ul>
           <p className={styles.mission}>Turn information into intelligence. That&apos;s it.</p>
+          <Link href="/about" className={styles.ctaLink}>
+            Explore the full Noesis experience →
+          </Link>
         </div>
       </div>
     </section>

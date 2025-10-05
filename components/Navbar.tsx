@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import type { ReactElement } from "react";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
@@ -10,6 +10,7 @@ interface NavLink {
 
 interface NavbarProps {
   scrollProgress?: number;
+  scrollY?: number;
 }
 
 const NAV_LINKS: NavLink[] = [
@@ -18,10 +19,12 @@ const NAV_LINKS: NavLink[] = [
   { href: "#services", label: "Services" },
   { href: "#blog", label: "Blog" },
   { href: "#contact", label: "Contact" },
-];
+]
 
-export default function Navbar({ scrollProgress = 0 }: NavbarProps): ReactElement {
+export default function Navbar({ scrollProgress = 0, scrollY = 0 }: NavbarProps): ReactElement {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [isHidden, setIsHidden] = useState<boolean>(false);
+  const lastScrollY = useRef<number>(0);
 
   useEffect(() => {
     if (!menuOpen) return undefined;
@@ -37,6 +40,31 @@ export default function Navbar({ scrollProgress = 0 }: NavbarProps): ReactElemen
   }, [menuOpen]);
 
   const closeMenu = (): void => setMenuOpen(false);
+
+  useEffect(() => {
+    const current = scrollY ?? 0;
+    const last = lastScrollY.current;
+
+    if (menuOpen) {
+      setIsHidden(false);
+    } else if (current < 80) {
+      setIsHidden(false);
+    } else if (current > last + 4) {
+      setIsHidden(true);
+    } else if (current < last - 4) {
+      setIsHidden(false);
+    }
+
+    lastScrollY.current = current;
+  }, [scrollY, menuOpen]);
+
+  const navbarClassName = useMemo<string>(() => {
+    const classes = [styles.navbar];
+    if (isHidden) {
+      classes.push(styles.navbarHidden);
+    }
+    return classes.join(" ");
+  }, [isHidden]);
 
   const shellClassName = useMemo<string>(() => {
     const classes = [styles.shell];
@@ -61,7 +89,7 @@ export default function Navbar({ scrollProgress = 0 }: NavbarProps): ReactElemen
   }, [menuOpen, scrollProgress]);
 
   return (
-    <header className={styles.navbar}>
+    <header className={navbarClassName}>
       <div className={shellClassName}>
         <Link href="/#home" className={styles.brand} onClick={closeMenu}>
           Noesis

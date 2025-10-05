@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import type { ReactElement } from "react";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import { AboutSection } from "../components/AboutSection";
+import { AboutExperience } from "../components/about/AboutExperience";
 import styles from "../styles/Home.module.css";
 
 export default function HomePage(): ReactElement {
@@ -54,11 +54,11 @@ export default function HomePage(): ReactElement {
         />
       </Head>
 
-      <Navbar scrollProgress={scrollProgress} />
+  <Navbar scrollProgress={scrollProgress} scrollY={scrollY} />
 
       <main className={styles.main}>
         <Hero scrollY={scrollY} viewportHeight={viewportHeight} />
-        <AboutSection />
+        <AboutExperience />
 
         <div className={styles.stickyContainer}>
           <section id="services" className={`${styles.section} ${styles.sectionServices}`}>
