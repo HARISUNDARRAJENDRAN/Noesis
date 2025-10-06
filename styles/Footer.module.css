@@ -1,0 +1,126 @@
+
+.footer {
+  position: relative;
+  background: linear-gradient(180deg, rgba(10, 10, 12, 1) 0%, rgba(6, 6, 8, 0.95) 100%);
+  color: rgba(244, 244, 244, 0.92);
+  padding: clamp(2.8rem, 7vw, 4.2rem) clamp(1.6rem, 6vw, 5rem) clamp(2.2rem, 6vw, 3.8rem);
+  overflow: hidden;
+}
+
+.footerBackdrop {
+  position: absolute;
+  inset: -40% 0 auto 0;
+  height: 220%;
+  background:
+    radial-gradient(circle at 20% 40%, rgba(239, 196, 171, 0.12), transparent 60%),
+    radial-gradient(circle at 80% 35%, rgba(239, 196, 171, 0.1), transparent 65%),
+    linear-gradient(180deg, rgba(14, 14, 18, 0.94) 0%, rgba(10, 10, 12, 0.98) 70%, rgba(6, 6, 8, 1) 100%);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.footerInner {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 3.6rem);
+  padding-bottom: clamp(1.8rem, 5vw, 2.4rem);
+  border-bottom: 1px solid rgba(239, 196, 171, 0.18);
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.logo {
+  font-family: "Instrument Serif";
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  letter-spacing: 0.18em;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 0.96rem;
+  letter-spacing: 0.04em;
+  color: rgba(239, 196, 171, 0.75);
+}
+
+.footerNav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.6rem, 4vw, 2.8rem);
+  font-size: 1.02rem;
+}
+
+.footerNav a {
+  color: rgba(239, 196, 171, 0.85);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footerNav a:hover,
+.footerNav a:focus-visible {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.footerMeta {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, 100%);
+  margin: clamp(1.8rem, 5vw, 2.6rem) auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 0.92rem;
+  color: rgba(229, 229, 230, 0.65);
+}
+
+.socialRow {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.socialIcon {
+  width: 22px;
+  height: 22px;
+  fill: rgba(239, 196, 171, 0.8);
+  transition: fill 0.25s ease, transform 0.25s ease;
+}
+
+.socialRow a:hover .socialIcon,
+.socialRow a:focus-visible .socialIcon {
+  fill: #ffffff;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 860px) {
+  .footerInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footerNav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: clamp(2.6rem, 12vw, 3.6rem) clamp(1.2rem, 8vw, 2.4rem) clamp(2rem, 12vw, 3.2rem);
+  }
+
+  .footerMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

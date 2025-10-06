@@ -1,0 +1,211 @@
+.page {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-family: "Instrument Serif";
+  color: rgba(24, 31, 42, 0.95);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.96rem;
+  color: rgba(71, 84, 103, 0.8);
+}
+
+.createButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(173, 91, 54, 0.9);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.createButton:hover,
+.createButton:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(173, 91, 54, 0.3);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.createCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.3rem;
+  border: 2px dashed rgba(173, 91, 54, 0.45);
+  border-radius: 24px;
+  color: rgba(173, 91, 54, 0.8);
+  text-align: center;
+  cursor: pointer;
+  background: rgba(255, 249, 245, 0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.createCard:hover,
+.createCard:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px rgba(203, 185, 170, 0.22);
+}
+
+.createIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(173, 91, 54, 0.1);
+  font-size: 1.8rem;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 200;
+}
+
+.modal {
+  width: min(520px, 100%);
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 0 40px 80px rgba(15, 23, 42, 0.18);
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 1.4rem;
+  color: rgba(24, 31, 42, 0.92);
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(71, 84, 103, 0.75);
+  font-weight: 600;
+}
+
+.input,
+.textarea {
+  border-radius: 16px;
+  border: 1px solid rgba(205, 181, 164, 0.6);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.95);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus-visible,
+.textarea:focus-visible {
+  border-color: rgba(173, 91, 54, 0.7);
+  box-shadow: 0 0 0 3px rgba(173, 91, 54, 0.18);
+  outline: none;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+}
+
+.secondaryButton,
+.primaryButton {
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.secondaryButton {
+  background: rgba(229, 231, 235, 0.7);
+  color: rgba(71, 84, 103, 0.9);
+}
+
+.primaryButton {
+  background: rgba(24, 31, 42, 0.95);
+  color: #ffffff;
+}
+
+.primaryButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .createButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

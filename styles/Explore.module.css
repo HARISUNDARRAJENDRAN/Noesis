@@ -1,0 +1,92 @@
+.page {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.hero {
+  display: grid;
+  gap: 1.2rem;
+  padding: clamp(1.8rem, 5vw, 2.8rem);
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(239, 196, 171, 0.25), rgba(255, 255, 255, 0.9));
+  border: 1px solid rgba(239, 196, 171, 0.35);
+  box-shadow: 0 24px 58px rgba(203, 185, 170, 0.22);
+}
+
+.heroEyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(173, 91, 54, 0.85);
+  font-weight: 600;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-family: "Instrument Serif";
+  color: rgba(24, 31, 42, 0.95);
+}
+
+.heroLead {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(71, 84, 103, 0.85);
+}
+
+.heroFooter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 0.92rem;
+  color: rgba(71, 84, 103, 0.78);
+}
+
+.heroFooter strong {
+  color: rgba(24, 31, 42, 0.9);
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.categoryDescription {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(71, 84, 103, 0.78);
+}
+
+.categoryAction {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(173, 91, 54, 0.85);
+  text-decoration: none;
+}
+
+.categoryActionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 360px;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 1.6rem;
+    border-radius: 28px;
+  }
+
+
+  .categoryActionGroup {
+    width: 100%;
+    text-align: left;
+  }
+}

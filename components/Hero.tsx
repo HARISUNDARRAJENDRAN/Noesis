@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { CSSProperties, ReactElement } from "react";
 import styles from "../styles/Hero.module.css";
@@ -57,9 +58,9 @@ export default function Hero({ scrollY = 0, viewportHeight = 1 }: HeroProps): Re
           <span>Watching</span>
         </h1>
         <div className={styles.actions}>
-          <a className={`${styles.button} ${styles.primary}`} href="#journey">
+          <Link className={`${styles.button} ${styles.primary}`} href="/register">
             Start Your Journey
-          </a>
+          </Link>
           <a className={`${styles.button} ${styles.secondary}`} href="#learn-more">
             Learn More
           </a>

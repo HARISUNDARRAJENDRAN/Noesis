@@ -5,6 +5,7 @@ import { HeroSection } from "../components/about/HeroSection";
 import { InteractiveDemo } from "../components/about/InteractiveDemo";
 import { FinalCTA } from "../components/about/FinalCTA";
 import Navbar from "../components/Navbar";
+import { SiteFooter } from "../components/SiteFooter";
 import styles from "../styles/AboutPage.module.css";
 
 export default function AboutPage(): ReactElement {
@@ -42,6 +43,7 @@ export default function AboutPage(): ReactElement {
         <InteractiveDemo />
         <FinalCTA />
       </main>
+      <SiteFooter />
     </>
   );
 }

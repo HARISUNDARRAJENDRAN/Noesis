@@ -17,7 +17,6 @@ const NAV_LINKS: NavLink[] = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#learn-more", label: "Experiences" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -103,6 +102,15 @@ export default function Navbar({ scrollProgress = 0, scrollY = 0 }: NavbarProps)
           ))}
         </nav>
 
+        <div className={styles.navActions}>
+          <Link href="/login" className={`${styles.navActionLink} ${styles.navActionText}`}>
+            Log In
+          </Link>
+          <Link href="/register" className={`${styles.navActionLink} ${styles.navActionPrimary}`}>
+            Get Started
+          </Link>
+        </div>
+
         <button
           type="button"
           className={`${styles.hamburger} ${menuOpen ? styles.hamburgerActive : ""}`}
@@ -123,6 +131,14 @@ export default function Navbar({ scrollProgress = 0, scrollY = 0 }: NavbarProps)
             {link.label}
           </Link>
         ))}
+        <div className={styles.mobileNavActions}>
+          <Link href="/login" className={styles.mobileNavAction} onClick={closeMenu}>
+            Log In
+          </Link>
+          <Link href="/register" className={`${styles.mobileNavAction} ${styles.mobileNavPrimary}`} onClick={closeMenu}>
+            Get Started
+          </Link>
+        </div>
       </nav>
     </header>
   );

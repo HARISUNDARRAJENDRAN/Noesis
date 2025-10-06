@@ -80,6 +80,55 @@
   gap: clamp(1rem, 2.6vw, 1.9rem);
 }
 
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.navActionLink {
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.45rem 1.05rem;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 41, 55, 0.14);
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+
+.navActionLink:hover,
+.navActionLink:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(31, 41, 55, 0.26);
+  box-shadow: 0 14px 26px rgba(31, 41, 55, 0.12);
+}
+
+.navActionText {
+  padding: 0;
+  border: none;
+  background: none;
+  color: rgba(31, 41, 55, 0.75);
+}
+
+.navActionText:hover,
+.navActionText:focus-visible {
+  transform: translateY(-1px);
+  color: rgba(31, 41, 55, 1);
+  box-shadow: none;
+}
+
+.navActionPrimary {
+  background: var(--color-primary);
+  color: #1f1411;
+  border-color: rgba(239, 196, 171, 0.4);
+}
+
+.navActionPrimary:hover,
+.navActionPrimary:focus-visible {
+  box-shadow: 0 18px 38px rgba(239, 196, 171, 0.32);
+  background: var(--color-primary-dark);
+}
+
 .navLink {
   font-size: 0.95rem;
   font-weight: 400;
@@ -215,6 +264,42 @@
   color: #ffffff;
 }
 
+.mobileNavActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.6rem;
+}
+
+.mobileNavAction {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  background: rgba(15, 23, 42, 0.08);
+  color: #1f2937;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.mobileNavAction:hover,
+.mobileNavAction:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);
+}
+
+.mobileNavPrimary {
+  background: var(--color-primary);
+  color: #1f1411;
+  border-color: rgba(239, 196, 171, 0.4);
+}
+
+.mobileNavPrimary:hover,
+.mobileNavPrimary:focus-visible {
+  background: var(--color-primary-dark);
+}
+
 .mobileNavLight .mobileNavLink {
   color: var(--color-text);
   border-color: rgba(100, 116, 139, 0.28);
@@ -234,6 +319,10 @@
 
 @media (max-width: 960px) {
   .desktopNav {
+    display: none;
+  }
+
+  .navActions {
     display: none;
   }
 

@@ -1,0 +1,89 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(239, 196, 171, 0.35);
+  box-shadow: 0 20px 46px rgba(203, 185, 170, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 64px rgba(203, 185, 170, 0.3);
+}
+
+.thumbnailWrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: radial-gradient(circle at 60% 20%, rgba(255, 237, 230, 0.65), rgba(237, 205, 180, 0.35));
+}
+
+.thumbnail {
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(31, 41, 55, 0.82);
+  color: #ffffff;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.2rem 1.4rem 1.3rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: rgba(31, 41, 55, 0.95);
+}
+
+.description {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(71, 84, 103, 0.78);
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.progressBarTrack {
+  flex: 1;
+  height: 8px;
+  background: rgba(229, 231, 235, 0.8);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(239, 196, 171, 0.95), rgba(173, 91, 54, 0.9));
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.progressLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(31, 41, 55, 0.82);
+}
