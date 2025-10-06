@@ -4,6 +4,8 @@ import type { ReactElement } from "react";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import { AboutExperience } from "../components/about/AboutExperience";
+import { TestimonialsSection } from "../components/TestimonialsSection";
+import { PricingSection } from "../components/PricingSection";
 import styles from "../styles/Home.module.css";
 
 export default function HomePage(): ReactElement {
@@ -53,61 +55,17 @@ export default function HomePage(): ReactElement {
           content="Noesis helps you go beyond watching by guiding immersive journeys with cinematic storytelling and curated learning paths."
         />
       </Head>
-
-  <Navbar scrollProgress={scrollProgress} scrollY={scrollY} />
+      <Navbar scrollProgress={scrollProgress} scrollY={scrollY} />
 
       <main className={styles.main}>
         <Hero scrollY={scrollY} viewportHeight={viewportHeight} />
         <AboutExperience />
 
+        <TestimonialsSection />
+
+        <PricingSection />
+
         <div className={styles.stickyContainer}>
-          <section id="services" className={`${styles.section} ${styles.sectionServices}`}>
-            <div className={styles.sectionInner}>
-              <span className={styles.sectionEyebrow}>Services</span>
-              <h2 className={styles.sectionTitle}>Bring Your Expertise to Life</h2>
-              <p className={styles.sectionLead}>
-                Collaborate with our studio team to design transformational programs, cinematic explainers, and bespoke
-                mentorship tracks for your community.
-              </p>
-              <ul className={styles.sectionHighlights}>
-                <li>Curriculum architecture that scaffolds complex ideas into clear chapters.</li>
-                <li>Story-driven video production that captures attention and keeps it growing.</li>
-                <li>Accountability layers that translate insight into measurable progress.</li>
-              </ul>
-              <div className={styles.sectionActions}>
-                <a href="#contact" className={`${styles.sectionButton} ${styles.sectionButtonPrimary}`}>
-                  Partner with Us
-                </a>
-                <a href="#blog" className={`${styles.sectionButton} ${styles.sectionButtonGhost}`}>
-                  See Our Process
-                </a>
-              </div>
-            </div>
-          </section>
-
-          <section id="blog" className={`${styles.section} ${styles.sectionBlog}`}>
-            <div className={styles.sectionInner}>
-              <span className={styles.sectionEyebrow}>Blog</span>
-              <h2 className={styles.sectionTitle}>Stay in Flow with Fresh Perspectives</h2>
-              <p className={styles.sectionLead}>
-                Reverse-engineer world-class explainers, learn how to design rituals for deep focus, and peek behind the
-                scenes of our storytelling lab.
-              </p>
-              <p className={styles.sectionText}>
-                Every article distils experiments from our studio mentors and the creators we coach, giving you real-world
-                frameworks you can try today. Subscribe to stay on the ridge with us.
-              </p>
-              <div className={styles.sectionActions}>
-                <a href="#learn-more" className={`${styles.sectionButton} ${styles.sectionButtonPrimary}`}>
-                  Read the Journal
-                </a>
-                <a href="#contact" className={`${styles.sectionButton} ${styles.sectionButtonGhost}`}>
-                  Get Updates
-                </a>
-              </div>
-            </div>
-          </section>
-
           <section id="learn-more" className={`${styles.section} ${styles.sectionLearn}`}>
             <div className={styles.sectionInner}>
               <span className={styles.sectionEyebrow}>Guided Experiences</span>
@@ -148,7 +106,7 @@ export default function HomePage(): ReactElement {
                 <a href="mailto:hello@noesis.studio" className={`${styles.sectionButton} ${styles.sectionButtonPrimary}`}>
                   Schedule a Call
                 </a>
-                <a href="#services" className={`${styles.sectionButton} ${styles.sectionButtonGhost}`}>
+                <a href="#pricing" className={`${styles.sectionButton} ${styles.sectionButtonGhost}`}>
                   Download Capabilities
                 </a>
               </div>

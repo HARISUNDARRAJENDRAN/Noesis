@@ -119,6 +119,12 @@ function FeatureNarrative({
             : "0 22px 52px rgba(15, 23, 42, 0.15)",
           borderColor: isActive ? "rgba(15, 23, 42, 0.12)" : "rgba(148, 163, 184, 0.18)",
         }}
+        whileHover={{
+          y: isActive ? -10 : -6,
+          scale: isActive ? 1.03 : 1.015,
+          boxShadow: "0 44px 82px rgba(15, 23, 42, 0.25)",
+        }}
+        whileTap={{ scale: 0.99 }}
         transition={{ duration: 0.55, ease: [0.2, 0.7, 0.4, 1] }}
         style={{ zIndex: 30 - index }}
       >

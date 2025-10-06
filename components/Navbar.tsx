@@ -16,10 +16,10 @@ interface NavbarProps {
 const NAV_LINKS: NavLink[] = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#blog", label: "Blog" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#learn-more", label: "Experiences" },
   { href: "#contact", label: "Contact" },
-]
+];
 
 export default function Navbar({ scrollProgress = 0, scrollY = 0 }: NavbarProps): ReactElement {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
