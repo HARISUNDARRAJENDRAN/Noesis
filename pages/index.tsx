@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import type { ReactElement } from "react";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import { AboutExperience } from "../components/about/AboutExperience";
 import { TestimonialsSection } from "../components/TestimonialsSection";
 import { PricingSection } from "../components/PricingSection";
 import { FinalCtaSection } from "../components/FinalCtaSection";
@@ -61,7 +60,6 @@ export default function HomePage(): ReactElement {
 
       <main className={styles.main}>
         <Hero scrollY={scrollY} viewportHeight={viewportHeight} />
-        <AboutExperience />
 
         <TestimonialsSection />
 

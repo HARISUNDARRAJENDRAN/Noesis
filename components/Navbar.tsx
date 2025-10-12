@@ -15,9 +15,7 @@ interface NavbarProps {
 
 const NAV_LINKS: NavLink[] = [
   { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar({ scrollProgress = 0, scrollY = 0 }: NavbarProps): ReactElement {

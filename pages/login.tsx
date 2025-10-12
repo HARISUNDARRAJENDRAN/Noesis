@@ -21,8 +21,8 @@ const SignInPage: NextPage = () => {
     console.info("Sign in submitted", payload);
     signIn();
     setLoading(false);
-    const redirectPath = typeof router.query.redirect === "string" ? router.query.redirect : "/learn";
-    const safeRedirect = redirectPath.startsWith("/") ? redirectPath : "/learn";
+    const redirectPath = typeof router.query.redirect === "string" ? router.query.redirect : "/dashboard";
+    const safeRedirect = redirectPath.startsWith("/") ? redirectPath : "/dashboard";
     void router.replace(safeRedirect);
   };
 
@@ -40,8 +40,8 @@ const SignInPage: NextPage = () => {
     console.info("Google sign in selected");
     signIn();
     setLoading(false);
-    const redirectPath = typeof router.query.redirect === "string" ? router.query.redirect : "/learn";
-    const safeRedirect = redirectPath.startsWith("/") ? redirectPath : "/learn";
+    const redirectPath = typeof router.query.redirect === "string" ? router.query.redirect : "/dashboard";
+    const safeRedirect = redirectPath.startsWith("/") ? redirectPath : "/dashboard";
     void router.replace(safeRedirect);
   };
 
